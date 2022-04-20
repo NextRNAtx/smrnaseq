@@ -1,6 +1,6 @@
 process TRIMGALORE {
     tag "$meta.id"
-    label 'process_high'
+    label 'process_medium'
 
     conda (params.enable_conda ? 'bioconda::trim-galore=0.6.7' : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
