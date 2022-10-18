@@ -176,7 +176,7 @@ summary['Output dir']          = params.outdir
 summary['Launch dir']          = workflow.launchDir
 summary['Working dir']         = workflow.workDir
 summary['Current home']        = "$HOME"
-// summary['Current user']        = "$USER"
+// summary['Current user']        = "$USER" /
 summary['Current path']        = "$PWD"
 summary['Script dir']          = workflow.projectDir
 summary['Config Profile']      = (workflow.profile == 'standard' ? 'UPPMAX' : workflow.profile)
