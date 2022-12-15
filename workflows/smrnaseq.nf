@@ -136,8 +136,7 @@ workflow SMRNASEQ {
     FASTQC_TRIMGALORE (
         ch_cat_fastq,
         params.skip_fastqc || params.skip_qc,
-        params.skip_trimming,
-        params.three_prime_adapter
+        params.skip_trimming
     )
     ch_versions = ch_versions.mix(FASTQC_TRIMGALORE.out.versions)
 

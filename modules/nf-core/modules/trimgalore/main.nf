@@ -39,7 +39,6 @@ process TRIMGALORE {
     def c_r2   = params.clip_r2 > 0             ? "--clip_r2 ${params.clip_r2}"                         : ''
     def tpc_r1 = params.three_prime_clip_r1 > 0 ? "--three_prime_clip_r1 ${params.three_prime_clip_r1}" : ''
     def tpc_r2 = params.three_prime_clip_r2 > 0 ? "--three_prime_clip_r2 ${params.three_prime_clip_r2}" : ''
-    def tp_adapter = params.three_prime_adapter > 0 ? "--adapter ${params.three_prime_adapter}" : ''
 
     // Added soft-links to original fastqs for consistent naming in MultiQC
     def prefix = task.ext.prefix ?: "${meta.id}"
@@ -52,7 +51,6 @@ process TRIMGALORE {
             --gzip \\
             $c_r1 \\
             $tpc_r1 \\
-            $tp_adapter \\
             ${prefix}.fastq.gz
         cat <<-END_VERSIONS > versions.yml
         "${task.process}":
@@ -73,7 +71,6 @@ process TRIMGALORE {
             $c_r2 \\
             $tpc_r1 \\
             $tpc_r2 \\
-            $tp_adapter \\
             ${prefix}_1.fastq.gz \\
             ${prefix}_2.fastq.gz
         cat <<-END_VERSIONS > versions.yml
