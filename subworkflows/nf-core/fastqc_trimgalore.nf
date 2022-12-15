@@ -10,6 +10,7 @@ workflow FASTQC_TRIMGALORE {
     reads         // channel: [ val(meta), [ reads ] ]
     skip_fastqc   // boolean: true/false
     skip_trimming // boolean: true/false
+    three_prime_adapter
 
     main:
 
